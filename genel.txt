@@ -1,43 +1,42 @@
-Temel Kavramlar ve Veri Türleri:
+# Temel Kavramlar ve Veri Türleri:
 
 Değişkenler ve Veri Türleri (String, Integer, Float, Boolean)
 Matematiksel İşlemler ve Operatörler
 String İşlemleri (index, slicing, concatenation)
 Listeler ve Temel List İşlemleri
 
-
-Koşullu İfadeler:
+# Koşullu İfadeler:
 
 If-else ifadeleri
 Karşılaştırma Operatörleri
 Mantıksal Operatörler
 Döngüler (for ve while)
 
-Fonksiyonlar:
+# Fonksiyonlar:
 
 Fonksiyon Tanımlama
 Fonksiyon Çağırma
 Fonksiyon Parametreleri ve Argümanlar
 return ifadesi
 
-Veri Yapıları:
+# Veri Yapıları:
 
 Tuple
 Set
 Dictionary
 
-Modüller:
+# Modüller:
 
 Modüllerin İçe Aktarılması
 Standart Kütüphane Modülleri
 Dışarı Aktarılan Modüllerin Kullanımı
 
-Hata Yakalama ve İstisnalar:
+# Hata Yakalama ve İstisnalar:
 
 try-except blokları
 İstisna Türleri
 
-Nesne Yönelimli Programlama:
+# Nesne Yönelimli Programlama:
 
 Sınıflar ve Nesneler
 Kalıtım ve Polimorfizm

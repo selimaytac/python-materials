@@ -115,3 +115,159 @@ animals = [Cat("Whiskers"), Dog("Fido"), Bird("Polly")]
 
 for animal in animals:
     print(animal.name + ": " + animal.speak())
+
+#--------------------------------------------
+
+class ServerManagement:
+    def __init__(self, server_name):
+        self.server_name = server_name
+
+    def start_server(self):
+        print(f'Starting server: {self.server_name}')
+
+    def stop_server(self):
+        print(f'Stopping server: {self.server_name}')
+
+    def check_status(self):
+        print(f'Checking status of server: {self.server_name}')
+
+    def perform_system_updates(self):
+        print(f'Performing system updates on server: {self.server_name}')
+
+
+x = ServerManagement('server1')
+
+x.start_server() # Output: Starting server: server1
+x.stop_server() # Output: Stopping server: server1
+x.check_status() # Output: Checking status of server: server1
+x.perform_system_updates() # Output: Performing system updates on server: server1
+
+x2 = ServerManagement('server2')
+
+x2.start_server() # Output: Starting server: server2
+x2.stop_server() # Output: Stopping server: server2
+x2.check_status() # Output: Checking status of server: server2
+x2.perform_system_updates() # Output: Performing system updates on server: server2
+
+class Deployment:
+    def __init__(self, app_name):
+        self.app_name = app_name
+
+    def deploy_new_version(self, version):
+        print(f'Deploying new version {version} of app: {self.app_name}')
+
+    def rollback_to_previous_version(self, version):
+        print(f'Rolling back to previous version {version} of app: {self.app_name}')
+
+    def monitor_deployment_status(self):
+        print(f'Monitoring deployment status of app: {self.app_name}')
+
+class InfrastructureProvisioning:
+    def __init__(self, environment):
+        self.environment = environment
+
+    def provision_new_vm(self, vm_name):
+        print(f'Provisioning new virtual machine: {vm_name} in environment: {self.environment}')
+
+    def configure_load_balancer(self, lb_name):
+        print(f'Configuring load balancer: {lb_name} in environment: {self.environment}')
+
+    def create_database(self, db_name):
+        print(f'Creating database: {db_name} in environment: {self.environment}')
+
+
+import os
+import shutil
+
+class Backup:
+    def __init__(self, src_path, dest_path):
+        self.src_path = src_path
+        self.dest_path = dest_path
+
+    def create_backup(self):
+        try:
+            shutil.copytree(self.src_path, self.dest_path)
+            print(f'Successfully created backup at {self.dest_path}')
+        except Exception as e:
+            print(f'Error creating backup: {e}')
+
+    def delete_backup(self):
+        try:
+            shutil.rmtree(self.dest_path)
+            print(f'Successfully deleted backup at {self.dest_path}')
+        except Exception as e:
+            print(f'Error deleting backup: {e}')
+
+import boto3
+
+class EC2Instance:
+    def __init__(self, instance_id):
+        self.instance_id = instance_id
+        self.ec2 = boto3.resource('ec2')
+
+    def start(self):
+        try:
+            instance = self.ec2.Instance(self.instance_id)
+            instance.start()
+            print(f'Started instance {self.instance_id}')
+        except Exception as e:
+            print(f'Error starting instance: {e}')
+
+    def stop(self):
+        try:
+            instance = self.ec2.Instance(self.instance_id)
+            instance.stop()
+            print(f'Stopped instance {self.instance_id}')
+        except Exception as e:
+            print(f'Error stopping instance: {e}')
+
+# Example usage:
+instance = EC2Instance('i-0123456789abcdef')
+instance.start()
+instance.stop()
+
+#--------------------------------------------
+
+import paramiko
+
+class SSHClient:
+    def __init__(self, hostname, username, password=None, key_filename=None):
+        self.hostname = hostname
+        self.username = username
+        self.password = password
+        self.key_filename = key_filename
+        self.client = paramiko.SSHClient()
+
+    def connect(self):
+        try:
+            self.client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+            if self.password:
+                self.client.connect(self.hostname, username=self.username, password=self.password)
+            else:
+                self.client.connect(self.hostname, username=self.username, key_filename=self.key_filename)
+            print(f'Connected to {self.hostname}')
+        except Exception as e:
+            print(f'Error connecting to {self.hostname}: {e}')
+
+    def run_command(self, command):
+        try:
+            stdin, stdout, stderr = self.client.exec_command(command)
+            output = stdout.read().decode()
+            error = stderr.read().decode()
+            if error:
+                print(f'Error running command: {error}')
+            else:
+                print(output)
+        except Exception as e:
+            print(f'Error running command: {e}')
+
+    def close(self):
+        self.client.close()
+        print(f'Connection to {self.hostname} closed')
+
+# Example usage:
+ssh = SSHClient('example.com', 'user', password='secret')
+ssh.connect()
+ssh.run_command('ls -la')
+ssh.close()
+

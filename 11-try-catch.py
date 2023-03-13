@@ -32,3 +32,22 @@ finally:
 # KeyError: Raised when you try to access a dictionary key that does not exist.
 
 # FileNotFoundError: Raised when a file or directory does not exist.
+
+#----------------------------------------------
+
+import requests
+
+try:
+    response = requests.get('https://api.example.com/v1/users')
+    response.raise_for_status()
+    # Process the response data
+    data = response.json()
+    print('Successfully retrieved user data')
+except requests.exceptions.HTTPError as errh:
+    print(f'HTTP error: {errh}')
+except requests.exceptions.ConnectionError as errc:
+    print(f'Connection error: {errc}')
+except requests.exceptions.Timeout as errt:
+    print(f'Timeout error: {errt}')
+except requests.exceptions.RequestException as err:
+    print(f'Other error: {err}')

@@ -89,3 +89,79 @@ for key in my_dict:
 
 for value in my_dict.values():
     print(value)
+
+
+#--------------------------------------------------------------
+
+# Tuple
+server1 = ('192.168.1.101', 'ubuntu', 'password1')
+server2 = ('192.168.1.102', 'centos', 'password2')
+server3 = ('192.168.1.103', 'debian', 'password3')
+
+dev_env = ('dev.example.com', 'user', 'password')
+staging_env = ('staging.example.com', 'user', 'password')
+prod_env = ('example.com', 'user', 'password')
+
+db1 = ('mysql', '192.168.1.101', 'mydb', 'user', 'password')
+db2 = ('postgres', '192.168.1.102', 'mydb', 'user', 'password')
+db3 = ('mongodb', '192.168.1.103', 'mydb', 'user', 'password')
+
+#--------------------------------------------------------------
+
+# Set
+
+ips1 = {'192.168.1.101', '192.168.1.102', '192.168.1.103'}
+ips2 = {'192.168.1.101', '192.168.1.104', '192.168.1.105'}
+
+common_ips = ips1.intersection(ips2)
+
+#--------------------------------------------------------------
+
+# Dictionary
+
+config = {
+    'service1': {
+        'db_host': 'localhost',
+        'db_name': 'mydb',
+        'db_user': 'user1',
+        'db_pass': 'password1'
+    },
+    'service2': {
+        'db_host': 'localhost',
+        'db_name': 'mydb',
+        'db_user': 'user2',
+        'db_pass': 'password2'
+    },
+    'service3': {
+        'db_host': 'localhost',
+        'db_name': 'mydb',
+        'db_user': 'user3',
+        'db_pass': 'password3'
+    }
+}
+
+resources = {
+    'service1': {
+        'cpu': 2,
+        'mem': 4,
+        'disk': 10
+    },
+    'service2': {
+        'cpu': 1,
+        'mem': 2,
+        'disk': 5
+    },
+    'service3': {
+        'cpu': 4,
+        'mem': 8,
+        'disk': 20
+    }
+}
+
+
+services = {
+    'service1': '192.168.1.101',
+    'service2': '192.168.1.102',
+    'service3': '192.168.1.103'
+}
+
