@@ -97,3 +97,183 @@ def my_operation():
 
 if __name__ == '__main__':
     perform_operation(my_operation)
+
+#--------------------------------------------------------------
+
+len() # - returns the number of elements in a data structure
+print() # - prints the specified arguments to the standard output (usually console)
+type() # - returns the type of an object
+range() # - returns a sequence of integers in a given range
+enumerate() # - allows you to access the elements of a data structure with their indices
+zip() # - merges the elements of multiple data structures
+sorted() # - sorts a sortable data structure in ascending order
+max() # - returns the largest element in a sortable data structure
+min() # - returns the smallest element in a sortable data structure
+sum() # - returns the sum of the elements in a numerical data structure
+round() # - rounds a decimal number to a specified number of decimal places
+abs() # - returns the absolute value of a number
+all() # - applies a condition to all the elements in a data structure and returns True if all are true, False if at least one is false
+any() # - applies a condition to all the elements in a data structure and returns True if at least one is true, False if none are true
+filter() # - applies a condition to all the elements in a data structure and returns the elements that meet the condition in a list
+
+# len
+my_list = [2, 4, 6, 8, 10]
+print("The length of my_list is:", len(my_list))
+
+# output:
+# The length of my_list is: 5
+
+# print
+my_var = "Hello, world!"
+print("The value of my_var is:", my_var)
+
+#output:
+# The length of my_list is: 5
+
+# type
+my_var = 3.14
+print("The type of my_var is:", type(my_var))
+
+# output:
+# The type of my_var is: <class 'float'>
+
+# range
+for i in range(1, 6):
+    print(i)
+
+# output:
+# 1
+# 2
+# 3
+# 4
+# 5
+
+# enumerate
+my_list = [2, 4, 6, 8, 10]
+for index, value in enumerate(my_list):
+    print("The value at index", index, "is", value)
+
+# output:
+# The value at index 0 is 2
+# The value at index 1 is 4
+# The value at index 2 is 6
+# The value at index 3 is 8
+# The value at index 4 is 10
+
+my_list2 = ["apple", "banana", "cherry"]
+for i, item in enumerate(my_list2):
+    print("Index:", i, "Value:", item) 
+
+# output: 
+# Index: 0 Value: apple
+# Index: 1 Value: banana
+# Index: 2 Value: cherry
+
+# zip
+names = ["Alice", "Bob", "Charlie"]
+ages = [25, 30, 35]
+for name, age in zip(names, ages):
+    print(name, "is", age, "years old.")
+
+# output:
+# Alice is 25 years old.
+# Bob is 30 years old.
+# Charlie is 35 years old.
+
+# sorted
+my_list = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+sorted_list = sorted(my_list)
+print("My list:", my_list)
+print("Sorted list:", sorted_list)
+
+# output:
+# My list: [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+# Sorted list: [1, 1, 2, 3, 3, 4, 5, 5, 5, 6, 9]
+
+# max
+my_list = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+print("The maximum value in my_list is:", max(my_list))
+
+# output:
+# The maximum value in my_list is: 9
+
+# min
+my_list = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+print("The minimum value in my_list is:", min(my_list))
+
+# output:
+# The minimum value in my_list is: 1
+
+# sum
+my_list = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+print("The sum of values in my_list is:", sum(my_list))
+
+# output:
+# The sum of values in my_list is: 51
+
+# round
+my_float = 3.14159265
+print("Rounded value of my_float:", round(my_float, 3))
+
+# output:
+# Rounded value of my_float: 3.142
+
+# abs
+x = -5
+y = abs(x)
+print(y) 
+
+# output: 5
+
+# all
+my_list = [2, 4, 6, 8]
+result = all(num % 2 == 0 for num in my_list)
+print(result) 
+
+# output: True
+
+# any
+my_list = [2, 4, -6, 8]
+result = any(num < 0 for num in my_list)
+print(result) 
+
+# output: True
+
+# filter
+my_list = [2, 3, 5, 7, 8, 10]
+filtered_list = list(filter(lambda x: x <= 5, my_list))
+print(filtered_list)
+
+ # output: [2, 3, 5]
+
+ #--------------------------------------------------------------
+ # Lambda functions
+
+lambda arguments: expression
+
+add = lambda x, y: x + y
+print(add(2, 3)) # Output: 5
+
+numbers = [1, 2, 3, 4, 5]
+squares = list(map(lambda x: x ** 2, numbers))
+print(squares)
+
+ # Output: [1, 4, 9, 16, 25]
+
+#--------------------------------------------------------------
+names = ['John', 'Alice', 'Bob', 'David']
+sorted_names = sorted(names, key=lambda x: x.lower())
+print(sorted_names)
+# output: ['Alice', 'Bob', 'David', 'John']
+
+#--------------------------------------------------------------
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
+print(even_numbers)
+# output: [2, 4, 6, 8, 10]
+
+#--------------------------------------------------------------
+numbers = [1, 2, 3, 4, 5]
+squared_numbers = list(map(lambda x: x ** 2, numbers))
+print(squared_numbers)
+# output: [1, 4, 9, 16, 25]

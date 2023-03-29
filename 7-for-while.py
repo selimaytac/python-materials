@@ -139,3 +139,73 @@ while num_guesses > 0:
 # If the user has no guesses left
 if num_guesses == 0:
     print(f"Sorry, you lost. The secret number was {secret_number}")
+
+#--------------------------------------------------------------
+
+my_list = [2, 4, 6, 8, 10]
+average = sum(my_list) / len(my_list)
+
+new_list = []
+for i in my_list:
+    if i > average:
+        new_list.append(i)
+
+print("Original list:", my_list)
+print("New list with elements greater than average:", new_list)
+
+#--------------------------------------------------------------
+
+word = "supercalifragilisticexpialidocious"
+char_count = {}
+
+for char in word:
+    if char in char_count:
+        char_count[char] += 1
+    else:
+        char_count[char] = 1
+
+max_count = 0
+max_char = ""
+
+for char in char_count:
+    if char_count[char] > max_count:
+        max_count = char_count[char]
+        max_char = char
+
+print("The most frequently occurring character is '" + max_char + "', which appears", max_count, "times.")
+
+#--------------------------------------------------------------
+
+sentence = "the quick brown fox jumps over the lazy dog"
+words = sentence.split()
+
+new_sentence = ""
+for word in words:
+    reversed_word = word[::-1]
+    new_sentence += reversed_word.capitalize() + " "
+
+print("Original sentence:", sentence)
+print("Reversed sentence with capitalized first letters:", new_sentence)
+
+#--------------------------------------------------------------
+
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+max_val = matrix[0][0]
+max_row = 0
+max_col = 0
+
+for i in range(len(matrix)):
+    for j in range(len(matrix[i])):
+        if matrix[i][j] > max_val:
+            max_val = matrix[i][j]
+            max_row = i
+            max_col = j
+
+print("Matrix:")
+for row in matrix:
+    print(row)
+print("Maximum value:", max_val)
+print("Location of maximum value: row", max_row, ", column", max_col)
+
+
