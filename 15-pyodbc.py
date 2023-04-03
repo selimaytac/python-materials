@@ -82,3 +82,6 @@ def insert_employee_with_savepoint():
     finally:
         # Bağlantıyı kapat
         cnxn.close()
+
+#--------------------------------------------
+
